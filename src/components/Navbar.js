@@ -32,13 +32,45 @@ export default function Navbar(props) {
               </a>
             </li>
           </ul>
+          <div className="d-flex">
+            <div
+              className="bg-primary rounded mx-2"
+              style={{ width: "30px", height: "30px" }}
+              onClick={() => {
+                props.toggleMode("primary");
+              }}
+            ></div>
+            <div
+              className="bg-danger rounded mx-2"
+              style={{ width: "30px", height: "30px" }}
+              onClick={() => {
+                props.toggleMode("danger");
+              }}
+            ></div>
+            <div
+              className="bg-success rounded mx-2"
+              style={{ width: "30px", height: "30px" }}
+              onClick={() => {
+                props.toggleMode("success");
+              }}
+            ></div>
+            <div
+              className="bg-warning rounded mx-2"
+              style={{ width: "30px", height: "30px" }}
+              onClick={() => {
+                props.toggleMode("warning");
+              }}
+            ></div>
+          </div>
           <div
             className={`form-check form-switch text-${props.mode === "light" ? "dark" : "light"}`}
           >
             <input
               className="form-check-input"
               type="checkbox"
-              onClick={props.toggleMode}
+              onClick={() => {
+                props.toggleMode(null);
+              }}
               role="switch"
               id="changeMode"
             />
